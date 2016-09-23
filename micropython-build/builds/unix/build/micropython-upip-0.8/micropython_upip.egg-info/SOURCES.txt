@@ -1,0 +1,8 @@
+setup.py
+upip.py
+upip_gzip.py
+upip_utarfile.py
+micropython_upip.egg-info/PKG-INFO
+micropython_upip.egg-info/SOURCES.txt
+micropython_upip.egg-info/dependency_links.txt
+micropython_upip.egg-info/top_level.txt
