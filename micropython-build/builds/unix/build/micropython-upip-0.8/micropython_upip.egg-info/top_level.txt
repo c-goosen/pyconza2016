@@ -1,4 +1,0 @@
-upip
-upip_gzip
-upip_utarfile
-upip_errno

@@ -1,0 +1,18 @@
+build/build/frozen.o: build/frozen.c \
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/4.8.5/include/stdint.h \
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/stdint.h \
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/_ansi.h \
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/newlib.h \
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/config.h \
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/ieeefp.h \
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/features.h \
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/xtensa/config/core-isa.h
+build/frozen.c :
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/4.8.5/include/stdint.h :
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/stdint.h :
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/_ansi.h :
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/newlib.h :
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/config.h :
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/machine/ieeefp.h :
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/features.h :
+ /home/micropy/esp-open-sdk/xtensa-lx106-elf/xtensa-lx106-elf/include/xtensa/config/core-isa.h :
