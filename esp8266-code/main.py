@@ -1,4 +1,4 @@
-import network, esp, socket, machine, ure, ubinascii, bmp180
+import network, esp, socket, machine, ure, ubinascii, bmp180,time, neopixel
 from machine import Pin, I2C
 from bmp180 import BMP180
 def wifiAP():
@@ -9,7 +9,7 @@ def connect_to_wifi():
     wlan = network.WLAN(network.STA_IF) 
     wlan.active(True)       
     wlan.isconnected()     
-    wlan.connect('cg', 'voss123456',timeout=100) 
+    wlan.connect('xx', 'XXXXX',timeout=100) 
     wlan.config('mac')     
     print ("Check if internet Connected")
     addr = socket.getaddrinfo('za.pycon.org', 80)[0][-1]
