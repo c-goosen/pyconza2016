@@ -72,6 +72,8 @@ RUN cd /home/micropy/micropython/
 RUN git submodule update --init
 
 RUN make -C mpy-cross
+RUN mkdir /home/micropy/micropython/esp8266
+RUN cp -R /home/micropy/micropython/ports/esp8266 /home/micropy/micropython/esp8266
 WORKDIR /home/micropy/micropython/esp8266
 #RUN cd /home/xtensa/micropython/esp8266
 RUN make axtls
