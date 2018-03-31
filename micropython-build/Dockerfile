@@ -80,7 +80,7 @@ RUN make
 #RUN cd build
 #COPY firmware-combined.bin /home/christo/Docker/micropython-build/
 
-WORKDIR /home/micropy/micropython/portsunix
+WORKDIR /home/micropy/micropython/ports/unix
 RUN make axtls
 RUN make
 USER root
