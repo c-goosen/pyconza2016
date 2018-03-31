@@ -73,6 +73,8 @@ RUN git submodule update --init
 
 RUN make -C mpy-cross
 RUN mkdir /home/micropy/micropython/esp8266
+RUN mkdir /home/micropy/micropython/unix
+RUN cp -R /home/micropy/micropython/ports/unix /home/micropy/micropython/unix
 RUN cp -R /home/micropy/micropython/ports/esp8266 /home/micropy/micropython/esp8266
 WORKDIR /home/micropy/micropython/esp8266
 #RUN cd /home/xtensa/micropython/esp8266
