@@ -63,34 +63,31 @@ RUN cd /home/micropy/esp-open-sdk
 RUN make 
 
 ## if you want to build the 8266 uPy fw:
-#RUN mkdir -p /home/xtensa/micropython/esp8266
 WORKDIR /home/micropy
-#RUN rm -r micropython/
 RUN git clone --recursive https://github.com/micropython/micropython.git || true
 WORKDIR /home/micropy/micropython/
 RUN cd /home/micropy/micropython/
 RUN git submodule update --init
 
 RUN make -C mpy-cross
-RUN mkdir /home/micropy/micropython/esp8266
-RUN mkdir /home/micropy/micropython/unix
-RUN cp -R /home/micropy/micropython/ports/unix /home/micropy/micropython/unix
-RUN cp -R /home/micropy/micropython/ports/esp8266 /home/micropy/micropython/esp8266
-WORKDIR /home/micropy/micropython/esp8266
-#RUN cd /home/xtensa/micropython/esp8266
+#RUN mkdir /home/micropy/micropython/esp8266
+#RUN mkdir /home/micropy/micropython/unix
+#RUN cp -R /home/micropy/micropython/ports/unix /home/micropy/micropython/unix
+#RUN cp -R /home/micropy/micropython/ports/esp8266 /home/micropy/micropython/esp8266
+WORKDIR /home/micropy/micropython/ports/esp8266
 RUN make axtls
 RUN make
 #RUN cd build
 #COPY firmware-combined.bin /home/christo/Docker/micropython-build/
 
-WORKDIR /home/micropy/micropython/unix
+WORKDIR /home/micropy/micropython/portsunix
 RUN make axtls
 RUN make
 USER root
 RUN make install
 USER micropy
 RUN ./micropython -m upip install picoweb
-RUN echo 'alias micropython="/home/micropy/micropython/unix/micropython"' >> /home/micropy/.bash_aliases
+RUN echo 'alias micropython="/home/micropy/micropython/ports/unix/micropython"' >> /home/micropy/.bash_aliases
 RUN . /home/micropy/.bashrc
 ADD src /home/micropy
 WORKDIR /home/micropy
@@ -98,16 +95,9 @@ USER root
 RUN mkdir -p /home/micropy/builds/esp8266
 RUN mkdir -p /home/micropy/builds/unix
 #VOLUME ["`pwd`/builds","/home/micropy/builds"]
-RUN cp -R /home/micropy/micropython/esp8266/build /home/micropy/builds/esp8266
-RUN cp -R /home/micropy/micropython/unix/build /home/micropy/builds/unix
+RUN cp -R /home/micropy/micropython/ports/esp8266/build /home/micropy/builds/esp8266
+RUN cp -R /home/micropy/micropython/ports/unix/build /home/micropy/builds/unix
 
 VOLUME ["`pwd`/builds","/home/micropy/builds"]
 
-#RUN git clone https://github.com/pfalcon/picoweb.git
-#RUN cd picoweb
-#RUN python setup.py install
-#SER root
-#RUN apt-get install libffi-dev
-
-#RUN apt-get install vim
 
